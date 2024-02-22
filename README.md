@@ -43,6 +43,7 @@ A potentiometer, informally a pot, is a three-terminal resistor with a sliding o
 Potentiometers are commonly used to control electrical devices such as volume controls on audio equipment. Potentiometers operated by a mechanism can be used as position transducers, for example, in a joystick. Potentiometers are rarely used to directly control significant power (more than a watt), since the power dissipated in the potentiometer would be comparable to the power in the controlled load
 CIRCUIT DIAGRAM
 
+![Screenshot 2024-02-22 112547](https://github.com/suganjoker/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/105915942/8d4d0454-888d-44a2-b0a5-062af7a4822e)
 
 
 
@@ -50,7 +51,8 @@ CIRCUIT DIAGRAM
 ![image](https://user-images.githubusercontent.com/36288975/163530788-eec3cdc3-95e8-4d2d-8349-6d0ea4c9439c.png)
 
 **FIGURE -01
-**
+**![Screenshot 2024-02-22 112409](https://github.com/suganjoker/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/105915942/c507a99e-47d1-4ace-a88b-7f7cad779b56)
+
 
 **PROCEDURE:**
 
@@ -68,7 +70,31 @@ CIRCUIT DIAGRAM
 
 **PROGRAM** 
  
+int led=4;
+int sensorpot;
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
 
+void loop()
+{
+  sensorpot=analogRead(A0);
+  Serial.println("date=");
+  Serial.println(sensorpot);
+  delay(500);
+  if (sensorpot>500)
+  {
+    digitalWrite(led,HIGH);
+      delay(500);
+    digitalWrite(led,LOW);
+      delay(500);
+}
+  else
+    digitalWrite(led,LOW);
+      delay(500);
+}
 
 
 
@@ -79,7 +105,9 @@ CIRCUIT DIAGRAM
 
 **
 **Simulation output:** 
-**
+**![Screenshot 2024-02-22 112409](https://github.com/suganjoker/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/105915942/6bc09f1a-a1cb-4aca-aa2b-5c400f4591e8)
+
+![Screenshot 2024-02-22 112422](https://github.com/suganjoker/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/105915942/194beba7-e0e6-44fb-b5c9-2f567145df30)
 
 
 [My image](username.github.com/repository/img/image.jpg)
